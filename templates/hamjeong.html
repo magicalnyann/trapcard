@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>you just activated my trap card</title>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="trapcard-background"></div>
+
+  <img src="{{ url_for('static', filename='img/oiiai.gif') }}" class="flying-cat" alt="oiiai" />
+
+  <!-- 유튜브 브금 -->
+  <iframe
+    id="bgm"
+    width="0"
+    height="0"
+    src="https://www.youtube.com/embed/4UUYdpEzNs8?start=5400&autoplay=1&mute=1&enablejsapi=1"
+    frameborder="0"
+    allow="autoplay"
+  ></iframe>
+
+  <script src="{{ url_for('static', filename='hamjeong.js') }}"></script>
+
+  <script>
+    document.addEventListener("mousemove", function (e) {
+      const poop = document.createElement("span");
+      poop.textContent = "💩";
+      poop.style.position = "absolute";
+      poop.style.left = (e.pageX + Math.random() * 20 - 10) + "px";
+      poop.style.top = (e.pageY + Math.random() * 20 - 10) + "px";
+      poop.style.fontSize = Math.random() * 24 + 12 + "px";
+      poop.style.pointerEvents = "none";
+      poop.style.zIndex = 999;
+      poop.style.opacity = 1;
+      poop.style.transition = "opacity 1s ease-out, transform 1s ease-out";
+      document.body.appendChild(poop);
+
+      requestAnimationFrame(() => {
+        poop.style.opacity = 0;
+        poop.style.transform = `translateY(${Math.random() * -30}px) scale(0.5)`;
+      });
+
+      setTimeout(() => {
+        poop.remove();
+      }, 1000);
+    });
+  </script>
+
+  <div id="mini-popup">
+    <p id="popup-text">100번 누르면 닫아줄게 😈</p>
+    <button id="popup-button">클릭 (0)</button>
+  </div>
+</body>
+</html>

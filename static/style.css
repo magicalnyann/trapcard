@@ -1,0 +1,56 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.trapcard-background {
+  background-image: url("img/trapp.jpg"); /* 또는 함정카드.jpg (되도록 영문 추천) */
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.flying-cat {
+  position: absolute;
+  width: 200px;
+  top: 50px;
+  left: 50px;
+}
+
+#mini-popup {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 3px solid rgb(255, 16, 16);
+  border-radius: 15px;
+  padding: 25px 40px;
+  z-index: 99999;
+  box-shadow: 0 0 15px rgb(255, 16, 16);
+  border-radius: 15px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#popup-text {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+#popup-button {
+  padding: 10px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
